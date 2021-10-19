@@ -11,76 +11,27 @@ namespace Opdracht4
         public static int Id { get; set; }
         public static int counter = 0;
         public string Title { get; set; }
-        public string Description {  get; set; }
+        public DateTime Tijdstip {  get; set; }
+        public string[] Informatie {  get; set; }
+        
 
-        public TeDoen(string title, string description)
+        public TeDoen(string title, string[] informatie)
         {
             counter = Id;
             Title = title;
             counter++;
-            Description = description;
-        }
-
-        List<T> lijst = new List<T>();
-
-        public void addLijst(T add)
-        {
-            lijst.Add(add);
-        }
-
-        public T RemoveLijst()
-        {
-            if (lijst.Count == 0)
-                throw new StackOverflowException();
-            T del = lijst[0];
-            lijst.RemoveAt(0);
-            return del;
-        }
-
-        public T Toon(T iets)
-        {
-            if (lijst.Contains(iets))
-            {
-                return iets;
-            }
-            else
-            {
-                return lijst[0];
-            }
-        }
-
-        public void Delete(T deleteAll)
-        {
-            lijst.Clear();
+            Informatie = informatie;
         }
 
         public override string? ToString()
         {
-            return String.Join(",", lijst);
+            return "id: " + Id +" Title: " +  Title +" info: " +  Informatie;
         }
 
-        public bool isAanwezig(T iets)
-        {
-            if (lijst.Contains(iets))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        public delegate void ToonMij(string Title, string[] Informatie, Boolean dringend);
+        public event ToonMij ToonMijEvent;
+            
 
-        public List<T>? Copy(List<T> stapel)
-        {
-            List<T> Tweedelijst = new List<T>();
-            foreach (T add in stapel)
-            {
-                Tweedelijst.Add(add);
-            }
-            return Tweedelijst;
-        }
     }
-
     }
 
