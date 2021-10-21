@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 
 namespace Opdracht4
 {
@@ -67,6 +68,10 @@ namespace Opdracht4
             }
             return Tweedelijst;
         }
-    
+
+        public static implicit operator Rij<T>(Timer v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

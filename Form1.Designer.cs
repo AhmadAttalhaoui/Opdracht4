@@ -39,6 +39,7 @@
             this.btZetAchteraan = new System.Windows.Forms.Button();
             this.btMessage = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.dtpTijd = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lbInfo
@@ -83,6 +84,7 @@
             this.cbTijd.TabIndex = 6;
             this.cbTijd.Text = "Tijd";
             this.cbTijd.UseVisualStyleBackColor = true;
+            this.cbTijd.CheckedChanged += new System.EventHandler(this.cbTijd_CheckedChanged);
             // 
             // btOpslaan
             // 
@@ -92,6 +94,7 @@
             this.btOpslaan.TabIndex = 7;
             this.btOpslaan.Text = "Opslaan";
             this.btOpslaan.UseVisualStyleBackColor = true;
+            this.btOpslaan.Click += new System.EventHandler(this.btOpslaan_Click);
             // 
             // btVolgendeTaak
             // 
@@ -101,6 +104,7 @@
             this.btVolgendeTaak.TabIndex = 8;
             this.btVolgendeTaak.Text = "Volgende Taak";
             this.btVolgendeTaak.UseVisualStyleBackColor = true;
+            this.btVolgendeTaak.Click += new System.EventHandler(this.btVolgendeTaak_Click);
             // 
             // btVerwijderTaak
             // 
@@ -110,6 +114,7 @@
             this.btVerwijderTaak.TabIndex = 9;
             this.btVerwijderTaak.Text = "Verwijder Taak";
             this.btVerwijderTaak.UseVisualStyleBackColor = true;
+            this.btVerwijderTaak.Click += new System.EventHandler(this.btVerwijderTaak_Click);
             // 
             // btZetAchteraan
             // 
@@ -139,11 +144,21 @@
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // dtpTijd
+            // 
+            this.dtpTijd.Location = new System.Drawing.Point(105, 127);
+            this.dtpTijd.Name = "dtpTijd";
+            this.dtpTijd.Size = new System.Drawing.Size(200, 23);
+            this.dtpTijd.TabIndex = 13;
+            this.dtpTijd.Value = new System.DateTime(2021, 10, 21, 21, 13, 9, 0);
+            this.dtpTijd.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dtpTijd);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btMessage);
             this.Controls.Add(this.btZetAchteraan);
@@ -175,6 +190,7 @@
         private System.Windows.Forms.Button btZetAchteraan;
         private System.Windows.Forms.Button btMessage;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DateTimePicker dtpTijd;
     }
 }
 

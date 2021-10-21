@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Opdracht4
 {
-    internal class TeDoen<T>
+    internal class TeDoen
     {
         public static int Id { get; set; }
         public static int counter = 0;
@@ -23,7 +23,14 @@ namespace Opdracht4
             Informatie = informatie;
         }
 
-        public override string? ToString()
+        public TeDoen(string title, DateTime tijdstip, string[] informatie)
+        {
+            Title = title;
+            Tijdstip = tijdstip;
+            Informatie = informatie;
+        }
+
+        public override string ToString()
         {
             return "id: " + Id +" Title: " +  Title +" info: " +  Informatie;
         }
